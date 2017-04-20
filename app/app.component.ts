@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
 	selector: 'my-app',
-	template: `<applicant-register></applicant-register>` 
+	template: `<applicant-list></applicant-list>` 
 })
 export class AppComponent {
 

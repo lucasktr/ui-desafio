@@ -1,20 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { ApplicantRegisterComponent } from './applicant-register.component'
-import { ApplicantFormComponent } from './users/applicant-form.component'
+import { AppComponent } from './app.component';;
+import { ApplicantFormComponent } from './users/applicant-form.component';
+import { ApplicantListComponent } from './applicant-list.component';
+import { ApplicantRegisterComponent } from './applicant-register.component';
 
+import { BackendService } from './shared/services/backend.service'
 
 @NgModule({
 	imports: [ BrowserModule,
-			   FormsModule
+			   FormsModule,
+			   HttpModule
 			 ],
 	declarations: [ AppComponent,
-					ApplicantRegisterComponent,
-				    ApplicantFormComponent
+				    ApplicantFormComponent,
+				    ApplicantListComponent,
+				    ApplicantRegisterComponent
 				  ],
-	bootstrap: [AppComponent]
+	providers: [ BackendService	],
+	bootstrap: [ AppComponent ]
 }) 
 export class AppModule {}
