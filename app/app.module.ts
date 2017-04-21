@@ -3,23 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';;
-import { ApplicantFormComponent } from './users/applicant-form.component';
+import { AppRoutingModule } from './app-routing.module'
+
+import { AppComponent } from './app.component';
 import { ApplicantListComponent } from './applicant-list.component';
 import { ApplicantRegisterComponent } from './applicant-register.component';
 
-import { BackendService } from './shared/services/backend.service'
+import { BackendService } from './shared/services/backend.service';
 
 @NgModule({
-	imports: [ BrowserModule,
-			   FormsModule,
-			   HttpModule
-			 ],
 	declarations: [ AppComponent,
-				    ApplicantFormComponent,
 				    ApplicantListComponent,
 				    ApplicantRegisterComponent
 				  ],
+	imports: [ BrowserModule,
+			   FormsModule,
+			   HttpModule,
+			   AppRoutingModule
+			 ],
 	providers: [ BackendService	],
 	bootstrap: [ AppComponent ]
 }) 

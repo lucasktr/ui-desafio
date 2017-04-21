@@ -1,3 +1,22 @@
 header h1 {
 	text-align: center;
 }
+
+form {
+	border-style: solid; 
+	border-width: 2px;
+	border-color: rgb(0,0,0);
+	border-radius: 3px;
+}
+
+.ng-valid[required], .ng-valid.required  {
+
+}
+.ng-invalid:not(form)  {
+
+}
+
+.success-msg {
+	text-align: center;
+	padding: 30px;
+}
