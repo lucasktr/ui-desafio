@@ -34,11 +34,8 @@ export class BackendService {
 	}
 
 	private extractData(res: Response) {
-		let body = res.json();
-		console.log('Extracting data..');
-		console.log(body);
-		//return body.data || { };
-		return [];
+		let obj = res.json();
+		return obj || [];
 	}
 
 	// //Receive array of sandwiches/drinks 
