@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 import { Applicant } from '../../shared/models/applicant';
 
@@ -12,10 +12,10 @@ import { ErrorResponse } from '../../shared/services/backend.service';
 })
 export class ApplicantFormComponent {
 	@Input() applicant: Applicant;
+	@Output() submitSuccess = new EventEmitter();
 
 	form_errors: any = {};
 	submitted = false;
-	success = false;
 
 	constructor (private backendService: BackendService) {}
 
@@ -30,11 +30,11 @@ export class ApplicantFormComponent {
 	}
 
 	checkResponse(appComponent: ApplicantFormComponent, res: any) {
-		//TODO: Emit an event to parent indicanting success
+		appComponent.submitted = false;
+
+		//send success event to parent if correct response
 		if (res.id)
-			appComponent.success = true;
-		else
-			appComponent.submitted = false;
+			appComponent.submitSuccess.emit({applicant: res});
 	}
 
 	onSubmit() {

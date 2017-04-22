@@ -1,6 +1,5 @@
 <div class="col-sm-12">
-
-	<form [hidden]="success" #applicantForm="ngForm" (ngSubmit)="onSubmit()" class="form-horizontal col-sm-offset-2 col-sm-8">
+	<form #applicantForm="ngForm" (ngSubmit)="onSubmit()" class="form-horizontal col-sm-offset-2 col-sm-8">
 
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Nome completo:</label>
@@ -107,12 +106,5 @@
 				<img [hidden]="!submitted" class="submit-loading"src="../assets/loading.gif">
 			</div>
 		</div>
-
-		{{backend_errors}}
-
 	</form>
-
-	<div [hidden]="!success">
-			<h2 class="success-msg">Cadastro efetuado com sucesso!</h2>
-	</div>
 </div>

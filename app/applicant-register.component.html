@@ -3,7 +3,11 @@
 </header>
 
 <main>
-	<applicant-form [applicant]="applicant"></applicant-form>
+	<applicant-form [hidden]="success" [applicant]="applicant" (submitSuccess)="onSubmitSuccess($event)"></applicant-form>
+
+	<div [hidden]="!success">
+		<h2 class="success-msg">Cadastro efetuado com sucesso!</h2>
+	</div>
 </main>
 
 <footer></footer>

@@ -9,5 +9,10 @@ import { Applicant } from './shared/models/applicant';
 })
 export class ApplicantRegisterComponent {
 	applicant = new Applicant();
+	success = false;
+
+	onSubmitSuccess(event) {
+		this.success = true;
+	}
 
 }
