@@ -8,34 +8,39 @@ import 'rxjs/add/observable/throw';
 
 import { Applicant } from '../models/applicant';
 
+export class ErrorResponse {
+	has_context: boolean;
+	context: any;
+}
+
 @Injectable()
 
 export class BackendService {
 	applicantUrl = 'https://delineaapi.herokuapp.com/candidate/';
 
-	//TEMP
-	drinksUrl = 'api/drinks';
-	ordersUrl = 'api/order';
-
 	private userId = '';
 	private headers = new Headers({'Content-Type': 'application/json'});
 
 	private handleError(error: Response | any) {
-		let errMsg: string;
-		if (error instanceof Response) {
-			const body = error.json() || '';
-			const err = body.error || JSON.stringify(body);
-			errMsg = `${error.status} - ${error.statusText || ''} - ${err}`; 
-		} else {
-			errMsg = error.message? error.message : error.toString();
-		}
-		console.error(errMsg);
-		return Observable.throw(errMsg);
-	}
+		let errorResponse: ErrorResponse = {
+			has_context: false,
+			context: null
+		};
 
-	private extractData(res: Response) {
-		let obj = res.json();
-		return obj || [];
+		if (error instanceof Response) {
+			//BAD REQUEST
+			if (error.status == 400) {
+				errorResponse.has_context = true;
+				errorResponse.context = error.json() || {};
+			}
+
+			const err  = JSON.stringify(error.json() || '');
+			console.log(`${error.status} - ${error.statusText || ''} - ${err}`);
+		} else {
+			const err = error.message? error.message : error.toString();
+			console.log(err);
+		}
+		return Observable.throw(errorResponse);
 	}
 
 	// //Receive array of sandwiches/drinks 
@@ -70,7 +75,7 @@ export class BackendService {
 	//get data
 	getApplicants(): Observable<Applicant[]> {
 		return this.http.get(this.applicantUrl,{headers: this.headers})
-						.map(this.extractData)
+						.map(res => res.json() || [])
 						.catch(this.handleError);
 	}
 
@@ -80,7 +85,13 @@ export class BackendService {
 	// 			.catch(this.handleError);
 	// }
 
-	// //put data
+	//put data
+	registerApplicant(applicant: Applicant): Observable<any> {
+		return this.http.post(this.applicantUrl, applicant, {headers: this.headers})
+						.map(res => res.json() || {})
+						.catch(this.handleError);
+	}
+
 	// orderSandwich(item: Sandwich): Observable<boolean> {
 	// 	let targetUrl = this.ordersUrl;
 

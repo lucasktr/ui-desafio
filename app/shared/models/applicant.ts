@@ -1,7 +1,7 @@
 export class Applicant {
 	id: number;
 	password: string;
-	last_login: string;
+	last_login: Date;
 	is_superuser: boolean;
 	full_name: string;
 	first_name: string;
@@ -9,7 +9,7 @@ export class Applicant {
 	email: string;
 	is_staff: boolean;
 	is_active: true;
-	date_joined: string;
+	date_joined: Date;
 	username: string;
 	confirm_username: boolean;
 	is_social: boolean;
@@ -18,7 +18,7 @@ export class Applicant {
 	name: string;
 	cpf: string;
 	rg: number;
-	birth_date: number;
+	birth_date: string;
 	lattes: string;
 	about: string;
 	groups: any[];

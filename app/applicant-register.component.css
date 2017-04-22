@@ -7,16 +7,14 @@ form {
 	border-width: 2px;
 	border-color: rgb(0,0,0);
 	border-radius: 3px;
-}
-
-.ng-valid[required], .ng-valid.required  {
-
-}
-.ng-invalid:not(form)  {
-
+	padding: 30px;
 }
 
 .success-msg {
 	text-align: center;
 	padding: 30px;
+}
+
+.submit-loading {
+	width: 20px;
 }

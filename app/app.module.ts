@@ -16,10 +16,10 @@ import { BackendService } from './shared/services/backend.service';
 				    ApplicantListComponent,
 				    ApplicantRegisterComponent
 				  ],
-	imports: [ BrowserModule,
-			   FormsModule,
-			   HttpModule,
-			   AppRoutingModule
+	imports: [ 	AppRoutingModule,
+				BrowserModule,
+			   	FormsModule,
+			   	HttpModule,
 			 ],
 	providers: [ BackendService	],
 	bootstrap: [ AppComponent ]

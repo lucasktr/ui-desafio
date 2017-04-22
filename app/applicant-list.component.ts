@@ -15,6 +15,7 @@ export class ApplicantListComponent implements OnInit {
 	constructor (private backendService: BackendService) {}
 
 	ngOnInit() {
+		//TODO: Avisar usuário em caso de erro, após x tentativas
 		this.backendService.getApplicants()
 						   .subscribe(applicants => this.applicants = applicants);
 	}
