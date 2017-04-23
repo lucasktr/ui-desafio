@@ -9,7 +9,7 @@ import { ApplicantRegisterComponent } from './applicant-register.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/cadastro', pathMatch: 'full' },
+  { path: '', redirectTo: 'listagem', pathMatch: 'full' },
   { path: 'cadastro',  component: ApplicantRegisterComponent },
   { path: 'listagem' , component: ApplicantListComponent },
   { path: 'edicao/:id', component: ApplicantEditComponent }
