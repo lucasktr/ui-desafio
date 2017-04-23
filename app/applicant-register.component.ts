@@ -14,7 +14,7 @@ export class ApplicantRegisterComponent {
 	constructor (private router: Router) {}
 
 	onSubmitSuccess(event) {
-		this.router.navigateByUrl('/listagem');
+		this.router.navigateByUrl('');
 	}
 
 }
