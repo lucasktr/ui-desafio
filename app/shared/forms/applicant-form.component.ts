@@ -39,8 +39,10 @@ export class ApplicantFormComponent {
 
 	onSubmit() {
 		if(this.applicant.hasOwnProperty('id')) {
-			//HTTP PUT
-			console.log('BACKEND SERVICE PUT FUNCTION NOT IMPLEMENTED')
+			let id:string = String(this.applicant.id);
+			this.backendService.updateApplicant(id, this.applicant)
+							   .subscribe(response => this.checkResponse(this, response),
+							   error => this.handleError(this, error));
 		}
 		else {
 			this.backendService.registerApplicant(this.applicant)

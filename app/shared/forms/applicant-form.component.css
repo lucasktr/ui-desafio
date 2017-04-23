@@ -13,3 +13,7 @@ form {
 .submit-loading {
 	width: 20px;
 }
+
+.submit-error {
+	color: red;
+}

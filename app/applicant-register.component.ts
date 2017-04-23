@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Applicant } from './shared/models/applicant';
 
@@ -9,10 +10,11 @@ import { Applicant } from './shared/models/applicant';
 })
 export class ApplicantRegisterComponent {
 	applicant = new Applicant();
-	success = false;
+
+	constructor (private router: Router) {}
 
 	onSubmitSuccess(event) {
-		this.success = true;
+		this.router.navigateByUrl('/listagem');
 	}
 
 }

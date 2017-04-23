@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ApplicantFormComponent } from './shared/forms/applicant-form.component'
+import { ApplicantEditComponent } from './applicant-edit.component'
+import { ApplicantFormComponent } from './shared/forms/applicant-form.component';
 import { ApplicantListComponent } from './applicant-list.component';
 import { ApplicantRegisterComponent } from './applicant-register.component';
 
@@ -14,6 +15,7 @@ import { BackendService } from './shared/services/backend.service';
 
 @NgModule({
 	declarations: [ AppComponent,
+					ApplicantEditComponent,
 					ApplicantFormComponent,
 				    ApplicantListComponent,
 				    ApplicantRegisterComponent

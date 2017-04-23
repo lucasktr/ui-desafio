@@ -1,0 +1,13 @@
+<header class="page-header">
+	<h1>Edição de candidatos</h1>
+</header>
+
+<main>
+	<applicant-form [hidden]="success" *ngIf="applicant" [applicant]="applicant" (submitSuccess)="onSubmitSuccess($event)"></applicant-form>
+
+	<div *ngIf="id_error">
+		<h2 class="no-id-msg">{{id_error}}</h2>
+	</div>
+</main>
+
+<footer></footer>
