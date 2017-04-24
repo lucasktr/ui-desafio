@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ApplicantEditComponent } from './applicant-edit.component'
+import { ApplicantEditComponent } from './applicant-edit.component';
 import { ApplicantFormComponent } from './shared/forms/applicant-form.component';
 import { ApplicantListComponent } from './applicant-list.component';
 import { ApplicantRegisterComponent } from './applicant-register.component';

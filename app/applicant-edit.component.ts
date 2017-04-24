@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 import { BackendService } from './shared/services/backend.service'; 
-import { Applicant } from './shared/models/applicant'
+import { Applicant } from './shared/models/applicant';
 
 @Component({
 	selector: 'applicant-edit',
