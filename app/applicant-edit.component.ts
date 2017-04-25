@@ -8,7 +8,7 @@ import { Applicant } from './shared/models/applicant';
 @Component({
 	selector: 'applicant-edit',
 	templateUrl: './app/applicant-edit.component.html',
-	styleUrls: [ './app/applicant-edit.component.css' ]
+	styleUrls: [ './app/applicant-page-common.css' ]
 })
 
 export class ApplicantEditComponent implements OnInit {

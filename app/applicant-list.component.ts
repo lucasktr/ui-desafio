@@ -7,7 +7,7 @@ import { Applicant } from './shared/models/applicant';
 @Component({
 	selector: 'applicant-list',
 	templateUrl: './app/applicant-list.component.html',
-	styleUrls: [ './app/applicant-list.component.css' ]
+	styleUrls: [ './app/applicant-page-common.css' ]
 })
 export class ApplicantListComponent implements OnInit {
 	applicants: Applicant[];

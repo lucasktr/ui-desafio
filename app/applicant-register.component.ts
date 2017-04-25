@@ -6,7 +6,7 @@ import { Applicant } from './shared/models/applicant';
 @Component({
 	selector: 'applicant-register',
 	templateUrl: './app/applicant-register.component.html',
-	styleUrls: [ './app/applicant-register.component.css' ] 
+	styleUrls: [ './app/applicant-page-common.css' ] 
 })
 export class ApplicantRegisterComponent {
 	applicant = new Applicant();
