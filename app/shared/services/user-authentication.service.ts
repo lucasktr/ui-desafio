@@ -36,4 +36,10 @@ export class UserAuthenticationService {
 		this.is_logged = true;
 	}
 
+	logout() {
+		this.is_logged = false;
+		this.username = null;
+		this.authToken = null;
+	}
+
 }

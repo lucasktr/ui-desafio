@@ -9,7 +9,7 @@ import { AuthToken } from './shared/models/auth-token'
 @Component({
 	selector: 'applicant-login',
 	templateUrl: './app/applicant-login.component.html',
-	styleUrls: [ './app/applicant-login.component.css' ]
+	styleUrls: [ './app/applicant-page-common.css' ]
 })
 
 export class ApplicantLoginComponent {

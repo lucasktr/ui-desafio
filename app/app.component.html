@@ -16,17 +16,21 @@
 			<ul class="nav navbar-nav">
 				<li><a routerLink='/listagem'>Listagem</a></li>
 				<li><a routerLink='/cadastro'>Cadastro</a></li>
-				<li><a>Entrar</a></li>
 			</ul>
+			<ul *ngIf="!userAuthService.is_logged" class="nav navbar-nav navbar-right">
+				<li><a routerLink=''>Entrar</a></li>
+			</ul>
+			<ng-container *ngIf="userAuthService.is_logged">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<button class="btn btn-link navbar-btn" style="text-decoration: none;" (click)="logout()">Sair</button>
+					</li>
+				</ul>
+				<p class="navbar-text navbar-right">{{userAuthService.username}}</p>
+			</ng-container>
 		</div>
 	</nav>
 </header>
-
-<!-- 		<ul>
-			<li>Listagem</li>
-			<li>Cadastro</li>
-			<li>Entrar</li>
-		</ul> -->
 
 <main class="container">
 	<router-outlet></router-outlet>
