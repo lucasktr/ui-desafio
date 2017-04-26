@@ -22,6 +22,28 @@ th, td {
   outline: none;
 }
 
+.btn {
+	border-width: 0px;
+	margin: 0px;
+}
+
+@media (min-width: 768px) {
+	.btn {
+		padding: 19.5px 15px;
+	}
+}
+
+.table-responsive {
+	border: none;
+}
+
+#menu-navbar-collapsed ul:nth-child(odd) {
+	margin-bottom: 0px;
+}
+#menu-navbar-collapsed ul:nth-child(even) {
+	margin-top: 0px;
+}
+
 .success-msg {
 	text-align: center;
 	padding: 30px;
