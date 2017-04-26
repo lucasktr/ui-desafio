@@ -18,6 +18,10 @@ th, td {
 	padding: 10px;
 }
 
+.btn:focus {
+  outline: none;
+}
+
 .success-msg {
 	text-align: center;
 	padding: 30px;

@@ -5,7 +5,8 @@ import { UserAuthenticationService } from './shared/services/user-authentication
 
 @Component({
 	selector: 'my-app',
-	templateUrl: './app/app.component.html'
+	templateUrl: './app/app.component.html',
+	styleUrls: [ './app/applicant-page-common.css' ]
 })
 export class AppComponent {
 	constructor (private userAuthService: UserAuthenticationService,
