@@ -15,18 +15,24 @@ export class ApplicantListComponent implements OnInit {
 	private _idSelected: number;
 
 	applicants: Applicant[];
+	selectedApplicant: Applicant;
 	is_logged: boolean;
 
 	constructor (private backendService: BackendService,
 				 private userAuthService: UserAuthenticationService,
 				 private router: Router) {
 		this.is_logged = false;
+		this.selectedApplicant = new Applicant();
 	}
 
 	ngOnInit() {
 		this.is_logged = this.userAuthService.is_logged;
 		this.backendService.getApplicants()
 						   .subscribe(applicants => this.applicants = applicants);
+	}
+
+	selectApplicant(applicant: Applicant) {
+		this.selectedApplicant = applicant;
 	}
 
 	removeApplicant(id: number) {
